@@ -53,7 +53,7 @@ class Player {
     this.height = 50
     // Player position
     this.x = this.game.width / 2 - this.width / 2
-    this.y = this.game.height - this.height
+    this.y = this.game.height
     this.speed = 5
     this.touchStartX = 0 // Initialize to zero
     this.touchStartY = 0 // Initialize to zero
