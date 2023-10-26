@@ -1,6 +1,5 @@
 import './style.css'
 
-
 class Projectile {
   width: number
   height: number
@@ -24,6 +23,7 @@ class Projectile {
   }
   update() {
     if (!this.free) this.y -= this.speed
+    // auto reload 
     if (this.y < - this.height) this.reset()
   }
   start(x: number, y: number) {
