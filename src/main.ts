@@ -17,7 +17,7 @@ class Projectile {
   }
   draw(context: CanvasRenderingContext2D) {
     if (!this.free) {
-      context.fillStyle = "rgb(239 68 68)"
+      context.fillStyle = "#e11d48"
       context.fillRect(this.x, this.y, this.width, this.height)
     }
   }
@@ -59,7 +59,7 @@ class Player {
     this.touchStartY = 0 // Initialize to zero
   }
   draw(context: CanvasRenderingContext2D) {
-    context.fillStyle = "rgb(251, 191, 36)"
+    context.fillStyle = "#d1d5db"
     context.beginPath()
 
     // Calculate the position of the top center of the triangle.
