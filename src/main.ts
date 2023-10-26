@@ -113,7 +113,7 @@ class Player {
         this.x += deltaX * sensitivity
         this.y += deltaY * sensitivity
 
-        // Implement boundaries as you did before
+        // boundaries 
         if (this.x < -this.width / 2) this.x = - this.width / 2
         else if (this.x > this.game.width - this.width / 2) this.x = this.game.width - this.width / 2
         if (this.y < 0) this.y = 0
@@ -127,7 +127,13 @@ class Player {
       // Make sure to prevent the default touch behavior to avoid scrolling
       this.game.canvas.addEventListener('touchmove', (e) => {
         e.preventDefault()
+
+        // Handle shooting when touching with two fingers
+        if (e.touches.length === 2) {
+          this.shoot()
+        }
       })
+
     }
   }
   shoot() {
