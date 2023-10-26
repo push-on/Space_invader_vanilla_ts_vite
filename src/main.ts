@@ -53,9 +53,24 @@ class Player {
     this.speed = 5
   }
   draw(context: CanvasRenderingContext2D) {
-    context.fillStyle = "rgb(251 191 36)"
-    context.fillRect(this.x, this.y, this.width, this.height)
+    context.fillStyle = "rgb(251, 191, 36)"
+    context.beginPath()
+
+    // Calculate the position of the top center of the triangle.
+    const topCenterX = this.x + this.width / 2
+    const topCenterY = this.y
+
+    // Move the drawing "pen" to the top center.
+    context.moveTo(topCenterX, topCenterY)
+
+    // Draw lines to the bottom-left and bottom-right to form the triangle.
+    context.lineTo(this.x, this.y + this.height)
+    context.lineTo(this.x + this.width, this.y + this.height)
+
+    context.closePath()
+    context.fill()
   }
+
   update() {
     // Horizontal Movement
     if (this.game.keys.indexOf('ArrowLeft') > -1 || this.game.keys.indexOf('a') > -1) this.x -= this.speed
